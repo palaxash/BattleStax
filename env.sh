@@ -1,20 +1,5 @@
-rm -rf .env
-touch .env
-touch ~/.astrarc
-echo "[default]" >> ~/.astrarc
-echo "Please paste the export block from the connect page here:"
-while :
-do 
- read line
- [[ $line =~ .*database_password.* ]]&& break
- echo "${line#export }" >> .env
- echo "${line#export }" >> ~/.astrarc
-done
-echo "Please enter your database password"
-read password
-echo "ASTRA_DB_PASSWORD=$password" >> ~/.astrarc
-echo "GAMES_COLLECTION=games" >> ~/.astrarc
-echo "ASTRA_DB_TOKEN=0" >> ~/.astrarc
-echo "ASTRA_DB_TOKEN_TIME=0" >> ~/.astrarc
-echo "ASTRA_DB_PASSWORD=$password" >> .env
-echo "GAMES_COLLECTION=games" >> .env
+export ASTRA_DB_ID=5e6e8c98-e605-4f77-bdd2-96bde75a87d4
+export ASTRA_DB_REGION=us-east1
+export ASTRA_DB_USERNAME=battle_user
+export ASTRA_DB_KEYSPACE=battlestax
+export ASTRA_DB_PASSWORD=<database_password>
